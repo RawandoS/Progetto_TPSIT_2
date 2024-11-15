@@ -12,8 +12,14 @@ private:
 
 public:
 	~Customer() {};
+
+	Account getBankAccount(){
+		return bank;
+	}
+
+	Wallet getWallet(){
+		return wallet;
+	}
 };
-
-
 
 #endif

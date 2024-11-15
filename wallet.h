@@ -9,7 +9,9 @@ class Wallet {
 private:
     double amount;
 public:
-    ~Wallet() {}
+    Wallet(): amount{0}{}
+
+    ~Wallet(){}
 
     void takeMoney(double money) {
         amount -= money;
@@ -19,7 +21,7 @@ public:
         amount += money;
     }
     void status() {
-        cout << "Total money in wallet: " << amount << endl;
+        cout << "Total money in wallet: " << amount << "€" << endl;
     }
 };
 
