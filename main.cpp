@@ -1,1 +1,1 @@
-
+david è gay
