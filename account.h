@@ -5,7 +5,13 @@ class Account{
     private:
         double amount;
     public:
-        ~Account(){}
+        ~Account() {};
+        void takeMoney(double money) {
+            amount -= money;
+        };
+        void addMoney(double money) {
+            amount += money;
+        };
 };
 
 #endif
