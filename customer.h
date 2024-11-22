@@ -4,22 +4,15 @@
 #ifndef customer_H
 #define customer_H
 
-class Customer
-{
-private:
-	Account bank;
-	Wallet wallet;
+class Customer{
+	private:
+		Account bank;
+		Wallet wallet;
 
-public:
-	~Customer() {};
-
-	Account getBankAccount(){
-		return bank;
-	}
-
-	Wallet getWallet(){
-		return wallet;
-	}
+	public:
+		~Customer() {};
+		Account getBankAccount();
+		Wallet getWallet();
 };
 
 #endif
