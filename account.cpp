@@ -10,12 +10,11 @@ void Account::addMoney(double m){
 
 void Account::status(){
     cout << "Available balance: " << amount << "€\n";
-    cout << "Invested amount: " << invested_amount << "€\n";
 }
 
-void Account::investment(double m, int term = 1){ // 1(default) -> short term(30d) | 2 -> medium term(180d) | 3 -> long term(360d)
-    if(amount == 0 || m > amount){
-        cout << "You don't have enough founds.\n";
+void Account::investment(double m, int term = 1){   // 1(default) -> short term(30d)
+    if(amount == 0 || m > amount){                  // 2 -> medium term(180d)
+        cout << "You don't have enough founds.\n";  // 3 -> long term(360d)
         return;
     }
 
@@ -37,36 +36,25 @@ void Account::investment(double m, int term = 1){ // 1(default) -> short term(30
         return;
     }
 
-    amount -= m;
-    invested_amount += m;
-    days += period;
-
-    double increment{0};
     int x{0};
+    double initial_investment{m};
+
+    cout << "Amount invested: " << m << "€\n";
 
     // for(int i{0}; i<period; i++){
     //     x = rand()%101;
-
-    //     if(x % 2 == 0){
-    //         increment += (x/100)*m;
-    //     }else{                          //to fix
-    //         increment -= (x/100)*m;
-    //     }
-        
-    //     amount += increment;
+    //     if(x%2 != 0) x *= -1;
+    //     m = (x/100.0)*initial_investment;
     // }
-    
-    amount += increment;
 
-    cout << period << " days have gone.\n";
-
-    // if(increment == 0){
-    //     cout << "You haven't earned any income.\n";
-    // }else if(increment < 0){
-    //     cout << "You have lost " << increment << "€ (" << (increment/m)*100 << "%) of your investment.\n"; //to fix
+    // if(m - initial_investment > 0){
+    //     cout << "You have earned " << m - initial_investment << "€, +" << ((m - initial_investment)/initial_investment)*100 << "% of your investment.\n";
     // }else{
-    //     cout << "You have earned " << increment << "€ (" << (increment/m)*100 << "%) of your investment.\n"; //to fix
+    //     cout << "You have lost " << m - initial_investment << "€, " << ((m - initial_investment)/initial_investment)*100 << "% of your investment.\n";
     // }
 
-    cout << "Your current balance is " << amount << "€\n";
+    // cout << "Your current balance is: " << amount << ".\n";
+
+    //fix investment func
+    //every month +100 feature to be added
 }

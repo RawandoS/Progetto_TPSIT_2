@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cmath>
 
-
 using namespace std;
 
 #ifndef account_h
@@ -10,10 +9,9 @@ using namespace std;
 class Account{
     private:
         double amount;
-        double invested_amount;
         int days; //time in days
     public:
-        Account():amount{((rand()%90001)+10000)/100.0}, invested_amount{0}, days{0}{}
+        Account():amount{((rand()%90001)+10000)/100.0}, days{0}{}
         ~Account(){}
         void takeMoney(double m);
         void addMoney(double m);

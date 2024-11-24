@@ -1,8 +1,8 @@
 #include "account.h"
 #include "wallet.h"
 
-#ifndef customer_H
-#define customer_H
+#ifndef customer_h
+#define customer_h
 
 class Customer{
 	private:
