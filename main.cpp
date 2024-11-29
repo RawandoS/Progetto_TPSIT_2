@@ -58,10 +58,11 @@ int main()
         }
     }
 
-/*    bank1.addCustomer(Cervellin);
-    int n{ 1000 };
-    bank1.depositMoney(n);
-    n = 100;
-    bank1.takeMoney(n)*/;
+    
     return 0;
 }
+
+//aggiunto 100 al mese 
+//aggiunti rischi
+//da finire interfaccia grafica
+
