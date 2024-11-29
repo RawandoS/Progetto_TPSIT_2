@@ -8,16 +8,12 @@ class account;
 class Wallet{
     private:
         double amount;
-
-
-
     public:
-        Wallet() : amount{ rand() % 101+100.0} {};
+        Wallet(double m) : amount{m} {};
         ~Wallet(){}
         void setAmount(double m);
-        void addMoney(double m);
         void status();
-        bool getAmount();
+        double getAmount();
 };
 
 #endif

@@ -17,7 +17,9 @@ void Bank::takeMoney(double m){
     {
         amount -= m;
         customerList[0].getWallet().setAmount(customerList[0].getWallet().getAmount() + m);
-
+        cout << endl;
+        cout << "the withdrawal was successful" << endl;
+        cout << endl;
     }
     else
     {
@@ -31,7 +33,8 @@ void Bank::depositMoney(double m){
     {
         amount += m;
         customerList[0].getWallet().setAmount(customerList[0].getWallet().getAmount() - m);
-
+        cout << "The deposit was successful" << endl;
+        cout << endl;
     }
     else
     {
@@ -45,7 +48,8 @@ void Bank::status(){
     cout << "Available balance: " << amount << "€\n";
 }
 
-void Bank::investment(double m, int term = 1){      // 1(default) -> short term(30d)
+void Bank::investment(double m){                    
+    int term = 1;                                   // 1(default) -> short term(30d)
     if(amount == 0 || m > amount){                  // 2 -> medium term(180d)
         cout << "You don't have enough founds.\n";  // 3 -> long term(360d)
         return;
@@ -57,6 +61,21 @@ void Bank::investment(double m, int term = 1){      // 1(default) -> short term(
     }
     amount -= m;
     int period{0};
+
+
+    cout << "***************************************************" << endl;
+    cout << endl;
+    cout << " - - - - - Enter the investment duration - - - - " << endl;
+    cout << endl;
+    cout << "                      Options                     " << endl;
+    cout << endl;
+    cout << " - short term      | 30  days |     (Digit 1)" << endl;
+    cout << " - medium term     | 180 days |     (Digit 2)" << endl;
+    cout << " - long term       | 360 days |     (Digit 3)" << endl;
+    cout << endl;
+    cin >> term;
+    cout << "***************************************************" << endl;
+    cout << endl;
 
     if(term == 1){
         period = 30;
@@ -80,6 +99,20 @@ void Bank::investment(double m, int term = 1){      // 1(default) -> short term(
     int risk{ 1 };
     int timeTravel{ 1 };
 
+    cout << "**********************************************************" << endl;
+    cout << endl;
+    cout << " - - - - - Enter the different risk/profit margins - - - " << endl;
+    cout << endl;
+    cout << "                         Options                     " << endl;
+    cout << endl;
+    cout << " - low risk/profit     | 30  days |     (Digit 1)" << endl;
+    cout << " - medium risk/profit  | 180 days |     (Digit 2)" << endl;
+    cout << " - long risk/profit    | 360 days |     (Digit 3)" << endl;
+    cout << endl;
+    cin >> risk;
+    cout << "**********************************************************" << endl;
+    cout << endl;
+
     //1(default) ->low risk, low profit
     //2 ->medium risk, medium profit
     //3 ->high risk, high profit
@@ -88,10 +121,23 @@ void Bank::investment(double m, int term = 1){      // 1(default) -> short term(
 
     if (risk == 1) {
 
-        cout << "move forward in time?" << endl;            //1->30 days(default) -> end of the month
-        if (timeTravel==1)                                  //2->n(to select)-> every n da
+        cout << "*********************************************" << endl;
+        cout << endl;
+        cout << " - - - - - - Move forward in time? - - - - " << endl;
+        cout << endl;
+        cout << "                 Options                     " << endl;
+        cout << endl;
+        cout << " - Default (end of duration)    (Digit 1)" << endl;
+        cout << " - Move n days forward          (Digit 2)" << endl;
+        cout << endl;
+        cin >> timeTravel;
+        cout << "*********************************************" << endl;
+        cout << endl;
+        //1->30 days(default) -> end of the month
+//2->n(to select)-> every n da 
+        if (timeTravel==1)                                  
         {
-            timeTravel = period;
+            timeTravel = -1;
         }
         else if (timeTravel==2)
         {
@@ -120,10 +166,21 @@ void Bank::investment(double m, int term = 1){      // 1(default) -> short term(
                 i = 0;
                 period -= timeTravel;
                 timeTravel = 1;
-                cout << "move forward in time?" << endl;                //1(default) -> end of the period
+                cout << "*********************************************" << endl;
+                cout << endl;
+                cout << " - - - - Move forward in time again? - - - - " << endl;
+                cout << endl;
+                cout << "                 Options                     " << endl;
+                cout << endl;
+                cout << " - Default (end of duration)    (Digit 1)" << endl;
+                cout << " - Move n days forward          (Digit 2)" << endl;
+                cout << endl;
+                cin >> timeTravel;
+                cout << "*********************************************" << endl;
+                cout << endl;              //1(default) -> end of the period
                 if (timeTravel == 1)                                    //2->n(to select)-> every n day
                 {
-                    timeTravel = period;
+                    timeTravel = -1;
                 }
                 else if (timeTravel == 2)                                
                 {
@@ -144,19 +201,30 @@ void Bank::investment(double m, int term = 1){      // 1(default) -> short term(
     }
     else if (risk == 2) {
 
-        cout << "move forward in time?" << endl;        //1->30 days(default) -> end of the month
+        cout << "*********************************************" << endl;
+        cout << endl;
+        cout << " - - - - - - Move forward in time? - - - - " << endl;
+        cout << endl;
+        cout << "                 Options                     " << endl;
+        cout << endl;
+        cout << " - Default (end of duration)    (Digit 1)" << endl;
+        cout << " - Move one month forward       (Digit 2)" << endl;
+        cout << " - Move n days forward          (Digit 3)" << endl;
+        cout << endl;
+        cin >> timeTravel;
+        cout << "*********************************************" << endl;
+        cout << endl;                                   //1->30 days(default) -> end of the month
         if (timeTravel==1)                              //2->n(to select)-> every n day
         {                                               //3-> end of the period
-            timeTravel = 30;
+            timeTravel = -1;
         }
-        else if (timeTravel == 2)                            
-                                                            
+        else if (timeTravel == 2)                                                                            
         {
-            cin >> timeTravel;
+            timeTravel = 30;
         }
         else if (timeTravel==3)
         {
-            timeTravel = period;
+            cin >> timeTravel;
         }
         else {
             cout << "Invalid option.\n";
@@ -181,18 +249,31 @@ void Bank::investment(double m, int term = 1){      // 1(default) -> short term(
                 i = 0;
                 period -= timeTravel;
                 timeTravel = 1;
-                cout << "move forward in time?" << endl;            //1->30 days(default) -> end of the month
+
+                cout << "*********************************************" << endl;
+                cout << endl;
+                cout << " - - - - Move forward in time again? - - - - " << endl;
+                cout << endl;
+                cout << "                 Options                     " << endl;
+                cout << endl;
+                cout << " - Default (end of duration)    (Digit 1)" << endl;
+                cout << " - Move one month forward       (Digit 2)" << endl;
+                cout << " - Move n days forward          (Digit 3)" << endl;
+                cout << endl;
+                cin >> timeTravel;
+                cout << "*********************************************" << endl;
+                cout << endl;            //1->30 days(default) -> end of the month
                 if (timeTravel==1)
                 {
-                    timeTravel = 30;
+                    timeTravel = -1;
                 }
                 else if (timeTravel == 2)                                //2->n(to select)-> every n day
                 {                                                   //3-> end of the period
-                    cin >> timeTravel;
+                   timeTravel=30;
                 }
                 else if(timeTravel==3)
                 {
-                    timeTravel = period;
+                    cin >> timeTravel;
                 }
                 else {
                     cout << "Invalid option.\n";
@@ -211,18 +292,31 @@ void Bank::investment(double m, int term = 1){      // 1(default) -> short term(
     }
     else if (risk == 3) {
 
-        cout << "move forward in time?" << endl;        //1->30 days(default) -> end of the month
+
+        cout << "*********************************************" << endl;
+        cout << endl;
+        cout << " - - - - - - Move forward in time? - - - - " << endl;
+        cout << endl;
+        cout << "                 Options                     " << endl;
+        cout << endl;
+        cout << " - Default (end of duration)    (Digit 1)" << endl;
+        cout << " - Move one month forward       (Digit 2)" << endl;
+        cout << " - Move n days forward          (Digit 3)" << endl;
+        cout << endl;
+        cin >> timeTravel;
+        cout << "*********************************************" << endl;
+        cout << endl;                                   //1->30 days(default) -> end of the month
         if (timeTravel == 1)                            //2->n(to select)-> every n day
         {                                               //3-> end of the period
-            timeTravel = 30;
+            timeTravel = -1;
         }
         else if (timeTravel == 2)
         {
-            cin >> timeTravel;
+            timeTravel = 30;
         }
         else if (timeTravel == 3)
         {
-            timeTravel = period;
+            cin >> timeTravel;
         }
         else {
             cout << "Invalid option.\n";
@@ -247,24 +341,36 @@ void Bank::investment(double m, int term = 1){      // 1(default) -> short term(
                 i = 0;
                 period -= timeTravel;
                 timeTravel = 1;
-                cout << "move forward in time?" << endl;            //1->30 days(default) -> end of the month
+
+                cout << "*********************************************" << endl;
+                cout << endl;
+                cout << " - - - - - - Move forward in time? - - - - " << endl;
+                cout << endl;
+                cout << "                 Options                     " << endl;
+                cout << endl;
+                cout << " - Default (end of duration)    (Digit 1)" << endl;
+                cout << " - Move one month forward       (Digit 2)" << endl;
+                cout << " - Move n days forward          (Digit 3)" << endl;
+                cout << endl;
+                cin >> timeTravel;
+                cout << "*********************************************" << endl;
+                cout << endl;            //1->30 days(default) -> end of the month
                 if (timeTravel == 1)                                //2->n(to select)-> every n day
                 {                                                   //3-> end of the period
-                    timeTravel = 30;
+                    timeTravel = -1;
                 }
                 else if (timeTravel == 2)                                
                 {                                                  
-                    cin >> timeTravel;
+                    timeTravel = 30;
                 }
                 else if (timeTravel == 3)
                 {
-                    timeTravel = period;
+                    cin >> timeTravel;
                 }
                 else {
                     cout << "Invalid option.\n";
                     return;
                 }
-
             }
         }
         if (m - initial_investment > 0) {
@@ -296,5 +402,6 @@ void Bank::investment(double m, int term = 1){      // 1(default) -> short term(
      for (size_t i = 0; i < days/30; i++)
      {
          takeMoney(100);
+         amount += 100;
      }
 }

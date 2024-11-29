@@ -14,12 +14,15 @@ class Bank{
         double amount;
         int days; //time in days
     public:
-        Bank():amount{((rand()%90001)+10000)/100.0}, days{0}{}
+        Bank():amount{0}, days{0}{}
         ~Bank(){}
         void takeMoney(double m);
         void depositMoney(double m);
         void status();
-        void investment(double m, int term);
+        void investment(double m);
+        vector <Customer> getList() {
+            return customerList;
+        }
         void addCustomer(Customer C);
 };
 

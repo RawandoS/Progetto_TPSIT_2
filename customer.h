@@ -9,8 +9,8 @@ class Customer{
 		Wallet wallet;
 
 	public:
-		Customer(string n)
-			:accountName{ n }{};
+		Customer(string n, double m)
+			:accountName{ n }, wallet{m} {};
 		~Customer() {};
 		Wallet getWallet();
 };

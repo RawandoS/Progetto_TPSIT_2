@@ -6,18 +6,24 @@ using namespace std;
 
 int main()
 {
-    int bank_option{ 1 }; 
-    int money{ 0 };
+    int bank_option{ -1 }; 
+    double money{ 0 };
     Bank bank1;
-    cout << "Inserire il nome dell'account su cui si vuole entrareche si vuole creare"<<endl;
+    cout << "Enter the username of the account you want to create"<<endl;
     string name;
     cin >> name;
-    Customer customer1{ name };
-    while (bank_option==1)
-    {
-        cout << "***************************************************" << endl;
+    cout << "Enter the amount of money you have in your wallet" << endl;
+    cin >> money;
 
-        cout << "You have different options:" << endl;
+    Customer customer1{ name, money};
+    bank1.addCustomer(customer1);
+    while (bank_option==-1)
+    {
+        cout << endl;
+        cout << "***************************************************" << endl;
+        cout << "- - - - - - - What you want to do now? - - - - - -" << endl;
+        cout << endl;
+        cout << "             You have several options" << endl;
         cout << endl;
         cout << " - Deposit money                    (Digit 1)" << endl;
         cout << " - Take money                       (Digit 2)" << endl;
@@ -36,7 +42,7 @@ int main()
             cin >> money;
             bank1.depositMoney(money);
             cout << endl;
-            cout << "***************************************************" << endl;
+
         }
         else if (bank_option==2)
         {
@@ -45,17 +51,26 @@ int main()
             cin >> money;
             bank1.takeMoney(money);
             cout << endl;
-            cout << "***************************************************" << endl;
         }
         else if (bank_option==3)
         {
-            cout << "Enter the total amount of money to take" << endl;
+            cout << "Enter the total amount to invest" << endl;
             cout << endl;
             cin >> money;
-            bank1.takeMoney(money);
+            bank1.investment(money);
             cout << endl;
-            cout << "***************************************************" << endl;
         }
+        else if (bank_option==4)
+        {
+            bank1.getList()[1].getWallet().status();
+            cout << endl;
+        }
+        else if (bank_option==5)
+        {
+            bank1.status();
+            cout << endl;
+        }
+        bank_option = -1;
     }
 
     
@@ -64,5 +79,8 @@ int main()
 
 //aggiunto 100 al mese 
 //aggiunti rischi
-//da finire interfaccia grafica
+//aggiunta interfacci grafica
+//fare controlli funzionamento codice per tutti i casi
+//inserire do until per inserimento sbagliato nelle funzioni
+
 
