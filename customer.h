@@ -1,4 +1,3 @@
-#include "account.h"
 #include "wallet.h"
 
 #ifndef customer_h
@@ -6,12 +5,13 @@
 
 class Customer{
 	private:
-		Account bank;
+		string accountName{ " " };
 		Wallet wallet;
 
 	public:
+		Customer(string n)
+			:accountName{ n }{};
 		~Customer() {};
-		Account getBankAccount();
 		Wallet getWallet();
 };
 

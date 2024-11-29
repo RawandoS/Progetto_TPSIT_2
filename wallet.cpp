@@ -1,7 +1,7 @@
 #include "wallet.h"
 
-void Wallet::takeMoney(double m){
-    amount -= m;
+void Wallet::setAmount(double m){
+    amount = m;
 }
 
 void Wallet::addMoney(double m){
@@ -10,4 +10,8 @@ void Wallet::addMoney(double m){
 
 void Wallet::status(){
     cout << "Available balance: " << amount << "€\n";
+}
+
+bool Wallet::getAmount() {
+    return amount;
 }
