@@ -155,4 +155,8 @@ void BankUser::monthBonus()
 void BankUser::moveForward(int t)
 {
     timeSpent += t;
+
+    for(int i{0}; i<t/30; i++){
+        this->monthBonus();
+    }
 }
