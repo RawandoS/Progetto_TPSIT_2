@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include "bankUser.h"
 
 using namespace std;
