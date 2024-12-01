@@ -122,11 +122,11 @@ void BankUser::investment(double amount, char period, char risk)
 
     if (_amount > amount)
     {
-        cout << "Earned amount: " << _amount << "€\n";
+        cout << "Earned amount: " << _amount - amount << "€\n";
     }
     else if (_amount < amount)
     {
-        cout << "Lost amount: " << _amount << "€\n";
+        cout << "Lost amount: " << amount - _amount << "€\n";
     }
     else
     {
