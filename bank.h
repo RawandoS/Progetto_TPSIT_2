@@ -1,29 +1,27 @@
 #include <iostream>
-#include <cmath>
-#include "customer.h"
 #include <vector>
+#include "bankUser.h"
 
 using namespace std;
 
 #ifndef bank_h
 #define bank_h
 
-class Bank{
-    private:
-        vector <Customer> customerList;
-        double amount;
-        int days; //time in days
-    public:
-        Bank():amount{0}, days{0}{}
-        ~Bank(){}
-        void takeMoney(double m);
-        void depositMoney(double m);
-        void status();
-        void investment(double m);
-        vector <Customer> getList() {
-            return customerList;
-        }
-        void addCustomer(Customer C);
+class Bank
+{
+private:
+    vector<BankUser> bankUserRecord;
+    string name;
+
+public:
+    Bank();
+    Bank(string &name);
+    Bank(string &name, vector<BankUser> &bankUserRecord);
+    ~Bank() {};
+    string getName();
+    vector<BankUser> getBankUserRecord();
+    BankUser &getBankUser(int index);
+    void addBankUser(string &userName);
 };
 
 #endif
