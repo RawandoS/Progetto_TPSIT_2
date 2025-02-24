@@ -7,7 +7,7 @@ public class BankUser {
     private double wallet;
     private int timeSpent;
 
-    public BankUser(String ID, String userName, double balance, double wallet, int timeSpent) {
+    public BankUser(String userName) {
         Random rand = new Random();
         this.ID = Integer.toString(rand.nextInt(1000,9999));
         this.userName = userName;
