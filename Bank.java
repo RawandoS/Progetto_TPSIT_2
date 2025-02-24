@@ -1,8 +1,8 @@
 import java.util.Vector;
 
 public class Bank {
-    Vector<BankUser> bankUserRecord;
-    String name;
+    private Vector<BankUser> bankUserRecord;
+    private String name;
 
     public Bank(){name="Volkswagen";}
 
