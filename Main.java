@@ -1,34 +1,30 @@
 import java.util.Scanner;
-public class Main {
 
+public class Main {
     public static void main(String[] args) {
 
     }
 
-    static void welcomeMessage()
-    {
-        System.out.println("\n***********************************************************\n");
-        System.out.println("WELCOME TO THE BANK PORTAL\n");
-        System.out.println("New Customer? Type 'n' to create a new Account.\n");
-
-        //System.out.println("Already a Customer? Type 'a' to login.\n");
-        System.out.println("***********************************************************\n");
+    static void welcomeMessage() {
+        System.out.println("***********************************************************");
+        System.out.println("WELCOME TO THE BANK PORTAL");
+        System.out.println("New Customer? Type 'n' to create a new Account.");
+        //System.out.println("Already a Customer? Type 'a' to login.");
+        System.out.println("***********************************************************");
         System.out.println("Option: ");
     }
 
-    static void userInterface()
-    {
-        System.out.println("\n***********************************************************\n");
-        System.out.println("Choose the desired option:\n");
-        System.out.println("Type 's' to view your current balance.\n");
-        System.out.println("Type 'd' to deposit founds.\n");
-        System.out.println("Type 'w' to withdraw founds.\n");
-        System.out.println("Type 'i' to invest founds.\n");
-        System.out.println("Type 't' to move time forward.\n");
-        //System.out.println("Type 'l' to log out.\n");
-        System.out.println("Type 'e' to exit.\n");
-        System.out.println("***********************************************************\n");
+    static void userInterface() {
+        System.out.println("***********************************************************");
+        System.out.println("Choose the desired option:");
+        System.out.println("Type 's' to view your current balance.");
+        System.out.println("Type 'd' to deposit founds.");
+        System.out.println("Type 'w' to withdraw founds.");
+        System.out.println("Type 'i' to invest founds.");
+        System.out.println("Type 't' to move time forward.");
+        //System.out.println("Type 'l' to log out.");
+        System.out.println("Type 'e' to exit.");
+        System.out.println("***********************************************************");
         System.out.println("Option: ");
     }
-
 }
