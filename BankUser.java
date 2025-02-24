@@ -54,6 +54,13 @@ public class BankUser {
         System.out.println("\nA month has passed, 100€ have been deposited in your wallet.");
     }
 
+    void moveForward(int t) {
+        timeSpent += t;
+        for (int i = 0; i < t/30; i++) {
+            this.monthBonus();
+        }
+    }
+
     void investment(double amount, char period, char risk) {
         Random rand = new Random();
         if (amount > balance || balance <= 0) {
