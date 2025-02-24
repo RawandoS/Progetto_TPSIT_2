@@ -1,4 +1,5 @@
 import java.util.Vector;
+
 public class Bank {
     Vector<BankUser> bankUserRecord;
     String name;
