@@ -8,11 +8,12 @@ public class BankUser {
     private int timeSpent;
 
     public BankUser(String ID, String userName, double balance, double wallet, int timeSpent) {
-        this.ID = ID;
+        Random rand = new Random();
+        this.ID = Integer.toString(rand.nextInt(1000,9999));
         this.userName = userName;
-        this.balance = balance;
-        this.wallet = wallet;
-        this.timeSpent = timeSpent;
+        this.balance = rand.nextDouble(1000,10000);
+        this.wallet = 0;
+        this.timeSpent = 0;
     }
 
     public String getID() {
@@ -54,6 +55,7 @@ public class BankUser {
     }
 
     void investment(double amount, char period, char risk) {
+        Random rand = new Random();
         if (amount > balance || balance <= 0) {
             System.out.println("Insufficient founds");
             return;
@@ -84,7 +86,6 @@ public class BankUser {
         double _amount = amount;
         timeSpent += _period;
         for (int i = 1; i <= _period; i++) {
-            Random rand = new Random();
             _amount = rand.nextInt(1000000) % _risk;
             if (rand.nextInt(1000000) % 2 != 0) {
                 _amount *= -1;
