@@ -5,6 +5,7 @@ public class BankUser {
     private double wallet;
     private int timeSpent;
 
+
     public BankUser(String ID, String userName, double balance, double wallet, int timeSpent) {
         this.ID = ID;
         this.userName = userName;
