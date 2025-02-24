@@ -26,7 +26,7 @@ public class BankUser {
 
     public void takeMoney(double m) {
         if (m > balance || balance <= 0) {
-            System.out.println("Insufficient founds. The import could not be withdrew.\n");
+            System.out.println("Insufficient founds. The import could not be withdrew.");
         } else {
             balance -= m;
             wallet += m;
@@ -35,7 +35,7 @@ public class BankUser {
 
     public void addMoney(double m) {
         if (m > wallet) {
-            System.out.println("Insufficient founds. The import could not be deposited.\n");
+            System.out.println("Insufficient founds. The import could not be deposited.");
         }
         else {
             balance += m;
@@ -44,14 +44,14 @@ public class BankUser {
     }
 
     public void status() {
-        System.out.println("\nAvailable balance: " + balance + "€\n");
-        System.out.println("Available wallet: " + wallet + "€\n");
-        System.out.println("Time spent: " + timeSpent + '\n');
+        System.out.println("Available balance: " + balance + "€");
+        System.out.println("Available wallet: " + wallet + "€");
+        System.out.println("Time spent: " + timeSpent);
     }
 
     void monthBonus() {
         wallet += 100;
-        System.out.println("\nA month has passed, 100€ have been deposited in your wallet.\n");
+        System.out.println("\nA month has passed, 100€ have been deposited in your wallet.");
     }
 
     void investment(double amount, char period, char risk) {
