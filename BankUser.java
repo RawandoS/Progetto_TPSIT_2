@@ -44,6 +44,7 @@ public class BankUser {
     }
 
     public void status() {
+        System.out.println("Name: " + userName);
         System.out.println("Available balance: " + balance + "€");
         System.out.println("Available wallet: " + wallet + "€");
         System.out.println("Time spent: " + timeSpent);
