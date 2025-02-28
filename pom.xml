@@ -1,0 +1,16 @@
+<project xmlns="https://maven.apache.org/POM/4.0.0" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.itis.classe.studente</groupId>
+  <artifactId>ITIS_Maven_Example</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <name>Gardin_Riolfo_TPSIT</name>
+  <!-- FIXME change it to the project's website (otherwise delete) -->
+  <url>https://github.com/RawandoS/Progetto_TPSIT_2.git</url>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.release>23</maven.compiler.release>
+  </properties>
+  
+</project>
